@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ criteria.CriteriaID }}</h1>
+
+    <p>
+        <b>CriteriaID:</b> {{ criteria.CriteriaID }}
+    </p>
+    <p>
+        <b>Description:</b> {{ criteria.Description }}
+    </p>
+    <p>
+        <b>Sites:</b>
+    </p>
+    <ul>
+        {% for s in sites %}
+            <li>
+                <a href="/sites/{{ s.SiteID }}">{{ s.SiteName|safe }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 8</h1>
+
+Qual a média do número de critérios usados para inscrever um site em cada país? Ordenado pela média de critérios usados descendente e pelo nome do país.
+
+<table>
+  <tr>
+    <th><b>Country Name</b></th>
+    <th><b>Average Criteria per Site</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.CountryName }}</td>
+    <td>{{ r.AverageCritPerSite }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

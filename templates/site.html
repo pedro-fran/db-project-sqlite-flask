@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ site.SiteName|safe }}</h1>
+
+    <p><b>SiteID:</b> {{ site.SiteID }}</p>
+    <p><b>Name:</b> {{ site.SiteName|safe }}</p>
+    <p><b>Area:</b> {{ site.AreaInHa }} Ha</p>
+    <p><b>Description:</b> {{ site.Description|safe }}</p>
+    <p><b>Justification:</b> {{ site.Justification|safe }}</p>
+    <p><b>Classification:</b> {{ site.Classification }}</p>
+    <p><b>Transboundary:</b> {{ site.Transboundary }}</p>
+    <p><b>Region:</b> {{ site.Region }}</p>
+    <p><b>Latitude:</b> {{ site.Latitude }}</p>
+    <p><b>Longitude:</b> {{ site.Longitude }}</p>
+    <p><b>Year:</b> {{ site.Year }}</p>
+    <p><b>Secondary Dates:</b> {{ site.SecondaryDates }}</p>
+
+    <p><b>Countries:</b></p>
+    <ul>
+        {% for c in countries %}
+            <li>
+                <a href="/countries/{{ c.CountryID }}">{{ c.CountryName }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><b>Criteria:</b></p>
+    <ul>
+        {% for cr in criteria %}
+            <li>
+                <a href="/criteria/{{ cr.CriteriaID }}">{{ cr.CriteriaID }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><b>Danger History:</b></p>
+    <ul>
+        {% for dh in dangerHistory %}
+            <li>
+                <a href="/danger-history/{{ dh.DangerID }}">
+                    Start: {{ dh.StartDate or '—' }}, End: {{ dh.EndDate or '—' }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

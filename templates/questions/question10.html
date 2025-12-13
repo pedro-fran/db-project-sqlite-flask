@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 10</h1>
+
+Em cada região existem quantos sites em perigo atualmente e qual o nome e número de sites em perigo do país com mais sites em perigo de cada região atualmente? Ordenado descendentemente pelo total de sítios em perigo de cada região.
+
+<table>
+  <tr>
+    <th><b>Region</b></th>
+    <th><b>Total Sites in Danger</b></th>
+    <th><b>Top Country</b></th>
+    <th><b>Num of Sites</b></th>
+
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.Region }}</td>
+    <td>{{ r.TotalSitesInDanger }}</td>
+    <td>{{ r.TopCountry }}</td>
+    <td>{{ r.NumSites }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

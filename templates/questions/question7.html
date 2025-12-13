@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 7</h1>
+
+Qual o ID e descrição do critério de inscrição mais usado, assim como quantas vezes foi usado?
+
+<table>
+  <tr>
+    <th><b>Criterion ID</b></th>
+    <th><b>Description</b></th>
+    <th><b>Num</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.CriteriaID }}</td>
+    <td>{{ r.Description }}</td>
+    <td>{{ r.Num }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ message }}</h1>
+
+    <h2>About</h2>
+    <p>
+        This web application illustrates the use of the UNESCO World Heritage Sites database.
+    </p>
+
+    <h2>Tables</h2>
+
+    <h3>Sites</h3>
+    <p>
+        <a href="/sites">List all</a>
+    </p>
+
+    <h3>Countries</h3>
+    <p>
+        <a href="/countries">List all</a>
+    </p>
+
+    <h3>Criteria</h3>
+    <p>
+        <a href="/criteria">List all</a>
+    </p>
+
+    <h3>Danger History</h3>
+    <p>
+        <a href="/danger-history">List all</a>
+    </p>
+
+    <h2>SQL Questions</h2>
+    <p>
+        <a href="/question-list">List all</a>
+    </p>
+{% endblock %}
+

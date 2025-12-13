@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 6</h1>
+
+Qual o número de sites inscritos por área geográfica em cada década? Ordenado por década e número de Sites descendente.
+
+<table>
+  <tr>
+    <th><b>Decade</b></th>
+    <th><b>Region</b></th>
+    <th><b>NumSites</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.Decade }}</td>
+    <td>{{ r.Region }}</td>
+    <td>{{ r.NumSites }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

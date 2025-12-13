@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 1</h1>
+
+Quais os nomes e respetivos países dos Parques Nacionais localizados em África abaixo da linha do Equador? Ordenado pelo nome dos Parques Nacionais.
+
+<table>
+  <tr>
+    <th><b>Site Name</b></th>
+    <th><b>Country</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.SiteName|safe }}</td>
+    <td>{{ r.CountryName }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

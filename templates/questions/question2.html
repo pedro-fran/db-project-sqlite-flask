@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 2</h1>
+
+Qual a área total em hectares de todos os Sites de cada país? Ordenado descendentemente pela área total.
+
+<table>
+  <tr>
+    <th><b>Country Name</b></th>
+    <th><b>Total Area in Ha</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.CountryName }}</td>
+    <td>{{ r.TotalAreaInHa }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

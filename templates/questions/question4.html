@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Pergunta 4</h1>
+
+Quantos sites existem em cada país? Ordenado pelo nome do país.
+
+<table>
+  <tr>
+    <th><b>Country Name</b></th>
+    <th><b>Num</b></th>
+  </tr>
+  {% for r in result %}
+  <tr>
+    <td>{{ r.CountryName }}</td>
+    <td>{{ r.Num }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

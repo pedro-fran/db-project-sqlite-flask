@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Sites</h1>
+
+  <table>
+    <tr>
+      <th><b>Id</b></th>
+      <th><b>Name</b></th>
+      <th><b>Classification</b></th>
+      <th><b>Region</b></th>
+      <th><b>Year</b></th>
+    </tr>
+
+    {% for site in sites %}
+      <tr>
+        <td>
+          <a href="/sites/{{ site.SiteID }}">{{ site.SiteID }}</a>
+        </td>
+        <td>{{ site.SiteName|safe }}</td>
+        <td>{{ site.Classification }}</td>
+        <td>{{ site.Region }}</td>
+        <td>{{ site.Year }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

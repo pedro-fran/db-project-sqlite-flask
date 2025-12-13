@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Danger History</h1>
+
+    <table>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Site Name</b></th>
+        </tr>
+
+        {% for dh in dHistory %}
+            <tr>
+                <td>
+                    <a href="/danger-history/{{ dh.DangerID }}">{{ dh.DangerID }}</a>
+                </td>
+                <td>
+                    <a href="/sites/{{ dh.SiteID }}">{{ dh.SiteName|safe }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

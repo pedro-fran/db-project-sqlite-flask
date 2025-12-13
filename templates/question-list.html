@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Perguntas</h1>
+
+<table>
+  <tr>
+    <th><b>Número</b></th>
+    <th><b>Pergunta</b></th>
+  </tr>
+  {% for q in questions %}
+  <tr>
+    <td>
+        <a href="/question-list/question/{{ q.id }}/">{{ loop.index }}</a>
+    </td>
+    <td>{{ q.title }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

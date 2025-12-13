@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ country.CountryName }}</h1>
+
+    <p>
+        <b>CountryID:</b> {{ country.CountryID }}
+    </p>
+    <p>
+        <b>Region:</b> {{ country.Region }}
+    </p>
+    <p>
+        <b>Sites:</b>
+    </p>
+    <ul>
+        {% for s in sites %}
+            <li>
+                <a href="/sites/{{ s.SiteID }}">{{ s.SiteName|safe }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Countries</h1>
+
+    <table>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Name</b></th>
+            <th><b>Region</b></th>
+        </tr>
+
+        {% for c in countries %}
+            <tr>
+                <td>
+                    <a href="/countries/{{ c.CountryID }}">{{ c.CountryID }}</a>
+                </td>
+                <td>
+                    {{ c.CountryName }}
+                </td>
+                <td>
+                    {{ c.Region }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

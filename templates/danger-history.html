@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Danger History</h1>
+
+    {% if message %}
+        <p>
+            {{ message }}
+        </p>
+    {% else %}
+        <p>
+            <b>DangerID:</b> {{ dangerHistory.DangerID }}
+        </p>
+        <p>
+            <b>Site:</b>
+            <a href="/sites/{{ site.SiteID }}">{{ site.SiteName }}</a>
+        </p>
+        <p>
+            <b>Start Date:</b> {{ dangerHistory.StartDate or '—' }}
+        </p>
+        <p>
+            <b>End Date:</b> {{ dangerHistory.EndDate or 'Currently in Danger' }}
+        </p>
+    {% endif %}
+{% endblock %}
