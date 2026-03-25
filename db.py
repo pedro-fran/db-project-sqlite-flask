@@ -4,7 +4,6 @@ import re
 
 global DB, DB_FILE
 
-# TODO change this to your database file
 DB_FILE = 'UNESCO.db'
 
 DB = dict()
